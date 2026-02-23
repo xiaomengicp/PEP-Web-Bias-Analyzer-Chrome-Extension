@@ -48,7 +48,9 @@ Select any passage on [PEP-Web](https://www.pep-web.org/), click "Analyze Bias,"
 3. Enable **Developer mode** (toggle in the top right)
 4. Click **Load unpacked**
 5. Select the `pepweb brower plugin` folder
-6. The extension icon will appear in your toolbar
+6. The extension is now active on PEP-Web
+
+> **Note — you do not need the toolbar icon to use the extension.** The "Analyze Bias" bubble appears automatically whenever you select text on PEP-Web. The toolbar icon only opens the Settings page (API key, model, bias toggles). To access Settings, right-click the puzzle-piece icon (🧩) in the Chrome toolbar → find **PEP-Web Bias Analyzer** → click the pin icon to keep it visible.
 
 ### Configure
 

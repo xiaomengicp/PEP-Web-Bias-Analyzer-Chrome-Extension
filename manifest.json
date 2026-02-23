@@ -10,7 +10,8 @@
     "contextMenus"
   ],
   "host_permissions": [
-    "https://www.pep-web.org/*",
+    "*://*.pep-web.org/*",
+    "*://pep-web.org/*",
     "https://api.anthropic.com/*"
   ],
   "background": {
@@ -19,7 +20,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.pep-web.org/*"
+        "*://*.pep-web.org/*",
+        "*://pep-web.org/*"
       ],
       "js": [
         "content_script.js"

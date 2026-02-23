@@ -5,8 +5,12 @@
   "use strict";
 
   // Prevent double-injection
-  if (window.__pepBiasAnalyzerLoaded) return;
+  if (window.__pepBiasAnalyzerLoaded) {
+    console.log("[PEP Bias Analyzer] Already loaded on this frame, skipping.");
+    return;
+  }
   window.__pepBiasAnalyzerLoaded = true;
+  console.log("[PEP Bias Analyzer] Content script injected on:", window.location.href);
 
   let bubble = null;
   let panel = null;
@@ -58,16 +62,20 @@
       try {
         const sel = window.getSelection();
         if (!sel || sel.rangeCount === 0) {
+          console.log("[PEP Bias Analyzer] mouseup: no selection / rangeCount=0");
           hideBubble();
           return;
         }
         const text = sel.toString().trim();
+        console.log("[PEP Bias Analyzer] mouseup: selected text length =", text.length, "| text:", text.substring(0, 60));
         if (text.length > 20) {
           currentSelection = text;
           const range = sel.getRangeAt(0);
           const rect = range.getBoundingClientRect();
+          console.log("[PEP Bias Analyzer] rect:", rect.left, rect.bottom, rect.width, rect.height);
           // If rect is zero (e.g. selection inside an iframe), fall back to mouse position
           if (rect.width === 0 && rect.height === 0) {
+            console.log("[PEP Bias Analyzer] rect is zero, using mouse position:", lastMouseX, lastMouseY);
             showBubble(lastMouseX, lastMouseY);
           } else {
             showBubble(rect.left, rect.bottom);
@@ -77,7 +85,7 @@
           hideBubble();
         }
       } catch (err) {
-        console.debug("[PEP Bias Analyzer] selection error:", err);
+        console.log("[PEP Bias Analyzer] selection error:", err);
         hideBubble();
       }
     }, 80);

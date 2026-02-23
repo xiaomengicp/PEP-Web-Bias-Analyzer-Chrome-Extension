@@ -53,10 +53,10 @@ body.pba-body-shifted {
 }
 
 #pba-bubble:hover {
-  background: rgba(201, 168, 76, 0.22);
-  border-color: var(--pba-gold);
+  background: #2d2210;
+  border-color: #e0bc60;
   color: #f0d070;
-  box-shadow: 0 4px 24px rgba(201, 168, 76, 0.35);
+  box-shadow: 0 6px 28px rgba(201, 168, 76, 0.4);
 }
 
 #pba-bubble svg {

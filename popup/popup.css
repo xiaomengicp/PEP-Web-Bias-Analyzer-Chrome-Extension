@@ -1,0 +1,411 @@
+/* popup.css — Settings popup styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface-2: #22263a;
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #e8eaf0;
+    --text-muted: #8892a4;
+    --gold: #c9a84c;
+    --gold-dim: rgba(201, 168, 76, 0.12);
+    --radius: 8px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    width: 360px;
+    min-height: 200px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 13px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--gold-dim);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.header-text h1 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+
+.header-text p {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* ─── Content ────────────────────────────────────────────────────────────── */
+.content {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ─── Sections ───────────────────────────────────────────────────────────── */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.section-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toggle-all-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.divider {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+/* ─── Inputs ─────────────────────────────────────────────────────────────── */
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 12.5px;
+    padding: 8px 11px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-color: rgba(201, 168, 76, 0.4);
+}
+
+input[type="password"]::placeholder,
+input[type="text"]::placeholder {
+    color: #4a5060;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 11.5px;
+}
+
+select {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 12.5px;
+    padding: 8px 11px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238892a4' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    transition: border-color 0.15s;
+}
+
+select:focus {
+    border-color: rgba(201, 168, 76, 0.4);
+}
+
+select option {
+    background: #1a1d27;
+}
+
+.input-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.input-row input {
+    flex: 1;
+}
+
+.icon-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: color 0.15s, background 0.15s;
+}
+
+.icon-btn:hover {
+    color: var(--text);
+    background: var(--surface-2);
+}
+
+/* ─── API Key Link ───────────────────────────────────────────────────────── */
+.get-key-link {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+    align-self: flex-start;
+}
+
+.get-key-link:hover {
+    color: var(--gold);
+}
+
+/* ─── Test Row ───────────────────────────────────────────────────────────── */
+.test-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.test-btn {
+    background: var(--gold-dim);
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    border-radius: var(--radius);
+    color: var(--gold);
+    font-family: var(--font);
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 7px 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.test-btn:hover {
+    background: rgba(201, 168, 76, 0.2);
+    border-color: rgba(201, 168, 76, 0.4);
+}
+
+/* Status indicator */
+.status-indicator {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.status-indicator.status-visible {
+    display: flex;
+}
+
+#status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dot-success {
+    background: #34d399;
+}
+
+.dot-error {
+    background: #f87171;
+}
+
+.dot-loading {
+    background: var(--gold);
+    animation: pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* ─── Bias Grid ──────────────────────────────────────────────────────────── */
+.bias-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bias-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    user-select: none;
+}
+
+.bias-item:hover {
+    background: var(--surface-2);
+}
+
+.bias-item-active {
+    border-color: color-mix(in srgb, var(--item-color) 35%, transparent);
+    background: color-mix(in srgb, var(--item-color) 6%, var(--surface));
+}
+
+.bias-checkbox {
+    display: none;
+}
+
+.bias-item-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.bias-item-label {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.bias-item-theory {
+    font-size: 10.5px;
+    color: var(--text-muted);
+}
+
+.bias-color-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.bias-item-active .bias-color-dot {
+    opacity: 1;
+}
+
+/* ─── Link Buttons ───────────────────────────────────────────────────────── */
+.link-btn {
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    transition: opacity 0.15s;
+}
+
+.link-btn:hover {
+    opacity: 0.75;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.save-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--gold);
+    border: none;
+    border-radius: var(--radius);
+    color: #0f1117;
+    font-family: var(--font);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    transition: opacity 0.15s;
+}
+
+.save-btn:hover {
+    opacity: 0.9;
+}
+
+.open-source-note {
+    font-size: 10.5px;
+    color: #4a5060;
+    text-align: center;
+}
+
+/* ─── Toast ──────────────────────────────────────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 7px 16px;
+    font-size: 12px;
+    color: var(--text);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.2s;
+    white-space: nowrap;
+}
+
+.toast.toast-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

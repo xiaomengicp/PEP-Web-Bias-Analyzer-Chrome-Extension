@@ -53,8 +53,10 @@ body.pba-body-shifted {
 }
 
 #pba-bubble:hover {
-  background: var(--pba-gold-dim);
-  box-shadow: 0 4px 24px rgba(201, 168, 76, 0.25);
+  background: rgba(201, 168, 76, 0.22);
+  border-color: var(--pba-gold);
+  color: #f0d070;
+  box-shadow: 0 4px 24px rgba(201, 168, 76, 0.35);
 }
 
 #pba-bubble svg {
@@ -200,7 +202,9 @@ body.pba-body-shifted {
 }
 
 @keyframes pba-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .pba-hidden {
@@ -343,9 +347,17 @@ body.pba-body-shifted {
   letter-spacing: 0.05em;
 }
 
-.pba-severity-high { color: #f87171; }
-.pba-severity-medium { color: #fbbf24; }
-.pba-severity-low { color: #94a3b8; }
+.pba-severity-high {
+  color: #f87171;
+}
+
+.pba-severity-medium {
+  color: #fbbf24;
+}
+
+.pba-severity-low {
+  color: #94a3b8;
+}
 
 /* Quote */
 .pba-quote {

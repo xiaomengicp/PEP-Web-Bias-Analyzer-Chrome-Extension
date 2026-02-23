@@ -82,6 +82,7 @@ async function handleAnalysis(selectedText) {
                 "Content-Type": "application/json",
                 "x-api-key": settings.apiKey.trim(),
                 "anthropic-version": "2023-06-01",
+                "anthropic-dangerous-direct-browser-access": "true",
             },
             body: JSON.stringify({
                 model: settings.model,
@@ -147,6 +148,7 @@ async function testConnection(apiKey, model) {
                 "Content-Type": "application/json",
                 "x-api-key": apiKey.trim(),
                 "anthropic-version": "2023-06-01",
+                "anthropic-dangerous-direct-browser-access": "true",
             },
             body: JSON.stringify({
                 model: model || DEFAULT_SETTINGS.model,

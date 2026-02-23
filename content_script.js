@@ -104,6 +104,8 @@
 
   function onAnalyzeClick() {
     hideBubble();
+    // Clear selection so the subsequent mouseup doesn't re-show the bubble
+    window.getSelection()?.removeAllRanges();
     showPanel();
     setLoading(true);
 
